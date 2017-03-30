@@ -32,7 +32,7 @@ if sys.platform == 'darwin':
     else:
         extra_compile_args=['-I/System/Library/Frameworks/vecLib.framework/Headers']
 
-    ext_modules = [Extension(name='bh_sne',
+    ext_modules = [Extension(name='tsne.bh_sne',
                    sources=['tsne/bh_sne_src/quadtree.cpp', 'tsne/bh_sne_src/tsne.cpp', 'tsne/bh_sne.pyx'],
                    include_dirs=[numpy.get_include(), 'tsne/bh_sne_src/'],
                    extra_compile_args=extra_compile_args,
@@ -46,7 +46,7 @@ else:
         extra_link_args = ['-lsatlas']
     
     # LINUX
-    ext_modules = [Extension(name='bh_sne',
+    ext_modules = [Extension(name='tsne.bh_sne',
                    sources=['tsne/bh_sne_src/quadtree.cpp', 'tsne/bh_sne_src/tsne.cpp', 'tsne/bh_sne.pyx'],
                    include_dirs=[numpy.get_include(), '/usr/local/include', 'tsne/bh_sne_src/'],
                    library_dirs=['/usr/local/lib'],
@@ -62,7 +62,7 @@ with open('requirements.txt') as f:
 cmdclass = versioneer.get_cmdclass()
 cmdclass['build_ext'] = build_ext
 
-setup(name='tsne',
+setup(name='tsne.bh_sne',
       version=versioneer.get_version(),
       cmdclass=versioneer.get_cmdclass(),
       author='Daniel Rodriguez',
