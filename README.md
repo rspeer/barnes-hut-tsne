@@ -39,7 +39,7 @@ pip install tsne
 Or directly from the Github repository:
 
 ```
-pip install git+https://github.com/danielfrg/tsne.git
+pip install git+https://github.com/alexisbcook/tsne.git
 ```
 
 Or using docker (could be useful for testing):
