@@ -3,7 +3,7 @@ from __future__ import division
 import numpy as np
 import scipy.linalg as la
 import sys
-from bh_sne import BH_SNE
+from tsne.bh_sne import BH_SNE
 
 def bh_sne(data, pca_d=None, d=2, perplexity=30., theta=0.5,
            random_state=None, copy_data=False):
