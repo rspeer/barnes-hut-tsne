@@ -30,27 +30,13 @@ Requirements
 Installation
 ------------
 
-You can install the package from [PyPI](https://pypi.python.org/pypi):
-
-```
-pip install tsne
-```
-
-Or directly from the Github repository:
+You can install directly from the Github repository:
 
 ```
 pip install git+https://github.com/alexisbcook/tsne.git
 ```
 
-Or using docker (could be useful for testing):
-
-```
-$ docker build -t tsne .
-$ docker run -it -v /Users/drodriguez/workspace/tsne/:/tsne tsn
-
-# Inside Docker:
-$ python setup.py install
-```
+MY ADAPTATION IS SUITABLE FOR PYTHON 3.5.
 
 Usage
 -----
