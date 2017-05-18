@@ -1,11 +1,3 @@
-"""
-To upload a new version:
-1. make clean
-2. git tag a new version: git tag v1.x.x
-3. python setup.py sdist
-4. python setup.py sdist register upload
-"""
-
 import sys
 import platform
 
@@ -44,7 +36,7 @@ else:
     redhat_dists = set(["redhat", "fedora", "centos"])
     if dist in redhat_dists:
         extra_link_args = ['-lsatlas']
-    
+
     # LINUX
     ext_modules = [Extension(name='tsne.bh_sne',
                    sources=['tsne/bh_sne_src/quadtree.cpp', 'tsne/bh_sne_src/tsne.cpp', 'tsne/bh_sne.pyx'],
@@ -62,12 +54,12 @@ with open('requirements.txt') as f:
 cmdclass = versioneer.get_cmdclass()
 cmdclass['build_ext'] = build_ext
 
-setup(name='tsne.bh_sne',
-      version=versioneer.get_version(),
+setup(name='barnes-hut-tsne',
+      version="0.2.0",
       cmdclass=versioneer.get_cmdclass(),
-      author='Daniel Rodriguez',
-      author_email='df.rodriguez@gmail.com',
-      url='https://github.com/danielfrg/py_tsne',
+      author='Rob Speer',
+      author_email='rob@luminoso.com',
+      url='https://github.com/rspeer/barnes-hut-tsne',
       description='TSNE implementations for python',
       license='Apache License Version 2.0, January 2004',
       packages=find_packages(),
