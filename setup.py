@@ -5,7 +5,6 @@ from distutils.core import setup
 from setuptools import find_packages
 from distutils.extension import Extension
 
-import versioneer
 import numpy
 from Cython.Distutils import build_ext
 from Cython.Build import cythonize
@@ -51,12 +50,12 @@ ext_modules = cythonize(ext_modules)
 with open('requirements.txt') as f:
     required = f.read().splitlines()
 
-cmdclass = versioneer.get_cmdclass()
-cmdclass['build_ext'] = build_ext
+# cmdclass = versioneer.get_cmdclass()
+# cmdclass['build_ext'] = build_ext
 
 setup(name='barnes-hut-tsne',
       version="0.2.0",
-      cmdclass=versioneer.get_cmdclass(),
+      # cmdclass=versioneer.get_cmdclass(),
       author='Rob Speer',
       author_email='rob@luminoso.com',
       url='https://github.com/rspeer/barnes-hut-tsne',
